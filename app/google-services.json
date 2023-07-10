@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "95570891250",
+    "project_id": "platformshcoolchildren",
+    "storage_bucket": "platformshcoolchildren.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95570891250:android:bfbff079985878c0fa1b6b",
+        "android_client_info": {
+          "package_name": "com.example.platformforschoolchildren"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95570891250-76p2tq3pc264jkjlun53gcgs4o3afe91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA69oJ0TxBerN9Flqh2SimZjiwo3x8GdPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95570891250-76p2tq3pc264jkjlun53gcgs4o3afe91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Platform For Schoolchildren</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Main page</string>
+    <string name="email">email</string>
+    <string name="password">введите пароль</string>
+    <string name="or_googleGmail">или через Google</string>
+</resources>
