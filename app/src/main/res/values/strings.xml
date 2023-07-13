@@ -5,4 +5,14 @@
     <string name="email">email</string>
     <string name="password">введите пароль</string>
     <string name="or_googleGmail">или через Google</string>
+    <string name="register">Регистрация</string>
+    <string name="name">Имя</string>
+    <string name="your_name">Ваше Имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="Gmail">Электронная почта</string>
+    <string name="example_gmail_com">example@gmail.com</string>
+    <string name="create_password">Пароль</string>
+    <string name="create_password2">Придумайте пароль</string>
+    <string name="toggle">Union vector</string>
+    <string name="your_last_name">Ваше фамилия</string>
 </resources>

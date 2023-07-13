@@ -13,6 +13,9 @@
         <action
             android:id="@+id/go_to_authFragment"
             app:destination="@id/authFragment" />
+        <action
+            android:id="@+id/go_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/authFragment"

@@ -49,6 +49,7 @@ class AuthFragment : Fragment() {
                     "введите почту",
                     Toast.LENGTH_SHORT,
                 ).show()
+                return@setOnClickListener
             }
             if (TextUtils.isEmpty(password)){
                 Toast.makeText(
@@ -56,6 +57,7 @@ class AuthFragment : Fragment() {
                     "введите пароль",
                     Toast.LENGTH_SHORT,
                 ).show()
+                return@setOnClickListener
             }
 
             enter(email,password)
