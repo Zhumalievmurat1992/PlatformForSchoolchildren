@@ -15,4 +15,10 @@
     <string name="create_password2">Придумайте пароль</string>
     <string name="toggle">Union vector</string>
     <string name="your_last_name">Ваше фамилия</string>
+    <string name="next">Продолжить</string>
+    <string name="conditions_agreement">Нажимая на кнопку, я соглашаюсь на обработку персональных данных</string>
+    <string name="have_an_account">У вас уже есть аккаунт?<a href="">Войти</a> </string>
+    <string name="haveAnAccount">У вас уже есть аккаунт?</string>
+    <string name="account_enter"><u>Войти</u></string>
+
 </resources>

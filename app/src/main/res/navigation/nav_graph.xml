@@ -36,4 +36,9 @@
             android:id="@+id/action_mainPageFragment_to_authFragment"
             app:destination="@id/authFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/regForSchoolchildrenFragment"
+        android:name="com.example.platformforschoolchildren.RegForSchoolchildrenFragment"
+        android:label="fragment_reg_for_schoolcildren"
+        tools:layout="@layout/fragment_reg_for_schoolcildren" />
 </navigation>

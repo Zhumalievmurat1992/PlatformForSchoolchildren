@@ -5,7 +5,9 @@
     <color name="gray_1">#767E8C</color>
     <color name="gray_2">#E0E5ED</color>
     <color name="error_color">#DC2323</color>
+    <color name="dark_blue">#2B59C3</color>
     <color name="ed_txt_ic_color">#767E8C</color>
+    <color name="transparent">#00F8F9FA</color>
 
 
 </resources>
