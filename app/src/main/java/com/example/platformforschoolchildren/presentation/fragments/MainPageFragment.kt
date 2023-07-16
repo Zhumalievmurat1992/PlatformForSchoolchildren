@@ -1,4 +1,4 @@
-package com.example.platformforschoolchildren
+package com.example.platformforschoolchildren.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.platformforschoolchildren.R
 import com.example.platformforschoolchildren.databinding.FragmentMainPageBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser

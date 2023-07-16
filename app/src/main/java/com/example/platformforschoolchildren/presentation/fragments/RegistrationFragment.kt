@@ -1,54 +1,35 @@
-package com.example.platformforschoolchildren
+package com.example.platformforschoolchildren.presentation.fragments
 
-import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.core.widget.addTextChangedListener
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.platformforschoolchildren.R
+import com.example.platformforschoolchildren.core.base.BaseFragment
 import com.example.platformforschoolchildren.databinding.FragmentRegistrationBinding
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.firebase.auth.FirebaseAuth
-import com.example.platformforschoolchildren.utils.InputHelper
 
-class RegistrationFragment : Fragment() {
+class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
 
-    private lateinit var binding: FragmentRegistrationBinding
 
-    private lateinit var mAuth: FirebaseAuth
-    private lateinit var googleSignInClient: GoogleSignInClient
+//    private lateinit var mAuth: FirebaseAuth
+//    private lateinit var googleSignInClient: GoogleSignInClient
+    override fun inflateViewBinding(inflater: LayoutInflater) =
+        FragmentRegistrationBinding.inflate(inflater)
 
-//    override fun onStart() {
-//        super.onStart()
-//
-//        val currentUser = mAuth.currentUser
-//        if (currentUser != null) {
-//            findNavController().navigate(R.id.go_to_authFragment)
-//        }
-//    }
+    override fun initListener() {
+        super.initView()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentRegistrationBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         emailFocusListener()
+
+        binding.btnResume.setOnClickListener {
+            findNavController().navigate(R.id.regForSchoolchildrenFragment)
+        }
 
         binding.accountEnter.setOnClickListener {
             findNavController().navigate(R.id.authFragment)
         }
-        binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.regForSchoolchildrenFragment)
-        }
+
         binding.name.addTextChangedListener(watcher)
         binding.lastName.addTextChangedListener(watcher)
         binding.password.addTextChangedListener(watcher)
@@ -62,7 +43,8 @@ class RegistrationFragment : Fragment() {
             val userName = binding.name.text.toString().trim()
             val lastName = binding.lastName.text.toString().trim()
             val password = binding.password.text.toString().trim()
-            binding.btnNext.isEnabled = userName.isNotEmpty() && lastName.isNotEmpty() && password.isNotEmpty()
+            binding.btnResume.isEnabled =
+                userName.isNotEmpty() && lastName.isNotEmpty() && password.isNotEmpty()
         }
 
         override fun afterTextChanged(p0: Editable?) {}
@@ -78,7 +60,6 @@ class RegistrationFragment : Fragment() {
     }
 
     private fun validEmail(): String? {
-
         val emailText = binding.emailEdTxt.text.toString()
         if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
             return "не удалось найти аккаунт"
@@ -86,6 +67,17 @@ class RegistrationFragment : Fragment() {
         return null
     }
 
+
+//   --------------------------------
+
+    //    override fun onStart() {
+//        super.onStart()
+//
+//        val currentUser = mAuth.currentUser
+//        if (currentUser != null) {
+//            findNavController().navigate(R.id.go_to_authFragment)
+//        }
+//    }
 
 //        binding.register.setOnClickListener {
 //

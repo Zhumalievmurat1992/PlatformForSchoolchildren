@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.example.platformforschoolchildren.RegistrationFragment"
+        android:name="com.example.platformforschoolchildren.presentation.fragments.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/authFragment"
-        android:name="com.example.platformforschoolchildren.AuthFragment"
+        android:name="com.example.platformforschoolchildren.presentation.fragments.AuthFragment"
         android:label="fragment_user_profile"
         tools:layout="@layout/fragment_auth" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainPageFragment"
-        android:name="com.example.platformforschoolchildren.MainPageFragment"
+        android:name="com.example.platformforschoolchildren.presentation.fragments.MainPageFragment"
         android:label="fragment_main_page"
         tools:layout="@layout/fragment_main_page" >
 
@@ -38,7 +38,12 @@
     </fragment>
     <fragment
         android:id="@+id/regForSchoolchildrenFragment"
-        android:name="com.example.platformforschoolchildren.RegForSchoolchildrenFragment"
-        android:label="fragment_reg_for_schoolcildren"
-        tools:layout="@layout/fragment_reg_for_schoolcildren" />
+        android:name="com.example.platformforschoolchildren.presentation.fragments.RegForSchoolchildrenFragment"
+        android:label="fragment_reg_for_schoolchildren"
+        tools:layout="@layout/fragment_reg_for_schoolchildren" />
+    <fragment
+        android:id="@+id/personalAccountFragment"
+        android:name="com.example.platformforschoolchildren.presentation.fragments.PersonalAccountFragment"
+        android:label="fragment_personal_account"
+        tools:layout="@layout/fragment_personal_account" />
 </navigation>

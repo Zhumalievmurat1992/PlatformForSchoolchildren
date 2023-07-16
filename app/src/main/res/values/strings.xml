@@ -5,6 +5,7 @@
     <string name="email">email</string>
     <string name="password">введите пароль</string>
     <string name="or_googleGmail">или через Google</string>
+    <string name="login_google">Войти через Google</string>
     <string name="register">Регистрация</string>
     <string name="name">Имя</string>
     <string name="your_name">Ваше Имя</string>
@@ -15,10 +16,18 @@
     <string name="create_password2">Придумайте пароль</string>
     <string name="toggle">Union vector</string>
     <string name="your_last_name">Ваше фамилия</string>
-    <string name="next">Продолжить</string>
+    <string name="resume">Продолжить</string>
     <string name="conditions_agreement">Нажимая на кнопку, я соглашаюсь на обработку персональных данных</string>
     <string name="have_an_account">У вас уже есть аккаунт?<a href="">Войти</a> </string>
     <string name="haveAnAccount">У вас уже есть аккаунт?</string>
     <string name="account_enter"><u>Войти</u></string>
+    <string name="school_number">Номер школы</string>
+    <string name="klass">Класс</string>
+    <string name="area">Область</string>
+    <string name="number_your_school">Номер вашей школы</string>
+    <string name="your_class">Ваш класс</string>
+    <string name="your_area">Ваш область</string>
+    <string name="login">Вход в аккаунт</string>
+    <string name="your_password">Ваш пароль</string>
 
 </resources>
