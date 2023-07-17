@@ -43,7 +43,7 @@ class MainPageFragment : Fragment() {
 
         binding.btnGoToAuthFragment.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            findNavController().navigate(R.id.action_mainPageFragment_to_authFragment)
+            findNavController().navigate(R.id.mainPageFragment)
         }
 
     }

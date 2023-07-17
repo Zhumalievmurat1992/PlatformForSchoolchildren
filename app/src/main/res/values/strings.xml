@@ -14,6 +14,7 @@
     <string name="example_gmail_com">example@gmail.com</string>
     <string name="create_password">Пароль</string>
     <string name="create_password2">Придумайте пароль</string>
+    <string name="forgot_password"><u>забыли пароль?</u></string>
     <string name="toggle">Union vector</string>
     <string name="your_last_name">Ваше фамилия</string>
     <string name="resume">Продолжить</string>
@@ -21,6 +22,7 @@
     <string name="have_an_account">У вас уже есть аккаунт?<a href="">Войти</a> </string>
     <string name="haveAnAccount">У вас уже есть аккаунт?</string>
     <string name="account_enter"><u>Войти</u></string>
+    <string name="account_enter2">Войти</string>
     <string name="school_number">Номер школы</string>
     <string name="klass">Класс</string>
     <string name="area">Область</string>

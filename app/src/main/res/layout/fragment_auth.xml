@@ -55,13 +55,31 @@
             android:textColorHint="@color/gray_1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/create_password"
-        android:layout_marginHorizontal="30dp"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_password"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end"
+            android:focusable="true"
+            android:text="@string/forgot_password"
+            android:textSize="16sp"
+            android:textColor="@color/dark_blue"/>
+
+    </LinearLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password_container"
@@ -90,15 +108,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_resume"
+        android:id="@+id/btn_enter"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="8dp"
         android:layout_marginHorizontal="30dp"
-        android:enabled="false"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/dark_blue"
-        android:text="@string/account_enter"
+        android:text="@string/account_enter2"
         android:textSize="16sp"
         app:cornerRadius="10dp" />
 
@@ -128,45 +145,6 @@
         app:strokeWidth="1dp"
         android:drawableLeft="@drawable/icon_google"
         tools:ignore="RtlHardcoded" />
-
-
-<!--    <EditText-->
-<!--        android:id="@+id/email"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginHorizontal="12dp"-->
-<!--        android:layout_marginTop="160dp"-->
-<!--        android:autofillHints="emailAddress"-->
-<!--        android:hint="@string/email"-->
-<!--        android:inputType="textEmailAddress"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--    <EditText-->
-<!--        android:id="@+id/password"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginHorizontal="12dp"-->
-<!--        android:autofillHints="password"-->
-<!--        android:hint="@string/password"-->
-<!--        android:inputType="textPassword"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/email" />-->
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/register"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginHorizontal="10dp"-->
-<!--        android:text="продолжить"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/password" />-->
-
 
     <ProgressBar
         android:id="@+id/progress_bar"
