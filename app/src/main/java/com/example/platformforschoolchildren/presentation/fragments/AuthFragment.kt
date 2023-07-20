@@ -24,7 +24,7 @@ import com.google.firebase.ktx.Firebase
 
 class AuthFragment : BaseFragment<FragmentAuthBinding>() {
 
-    private lateinit var mAuth : FirebaseAuth
+    private lateinit var mAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
     override fun inflateViewBinding(inflater: LayoutInflater) =
         FragmentAuthBinding.inflate(inflater)
@@ -55,8 +55,16 @@ class AuthFragment : BaseFragment<FragmentAuthBinding>() {
             }
         }
 
+        binding.forgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.forgotPasswordFragment)
+        }
+
         binding.btnGoogle.setOnClickListener {
             signInWithGoogle()
+        }
+
+        binding.register.setOnClickListener {
+            findNavController().navigate(R.id.registrationFragment)
         }
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -89,41 +97,44 @@ class AuthFragment : BaseFragment<FragmentAuthBinding>() {
         launcher.launch(signInIntent)
     }
 
-        private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult())
-    { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-            handleResults(task)
-        }
-    }
-
-        private fun handleResults(task: Task<GoogleSignInAccount>) {
-        if (task.isSuccessful) {
-            val account: GoogleSignInAccount? = task.result
-            if (account!= null) {
-                updateUI(account)
+    private val launcher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+        { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                handleResults(task)
             }
         }
-        else {
-            Toast.makeText(requireContext(), "не удалось войти в систему", Toast.LENGTH_SHORT).show()
+
+    private fun handleResults(task: Task<GoogleSignInAccount>) {
+        if (task.isSuccessful) {
+            val account: GoogleSignInAccount? = task.result
+            if (account != null) {
+                updateUI(account)
+            }
+        } else {
+            Toast.makeText(requireContext(), "не удалось войти в систему", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 
-        private fun updateUI(account: GoogleSignInAccount) {
+    private fun updateUI(account: GoogleSignInAccount) {
         binding.progressBar.visibility = View.VISIBLE
-        val credential = GoogleAuthProvider.getCredential(account.idToken,null)
-        mAuth.signInWithCredential(credential).addOnCompleteListener{
+        val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+        mAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
                 binding.progressBar.visibility = View.GONE
                 findNavController().navigate(R.id.mainPageFragment)
-            }
-            else {
+            } else {
                 binding.progressBar.visibility = View.GONE
-                Toast.makeText(requireContext(), "в данный момент не удается войти в систему", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "в данный момент не удается войти в систему",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
-
 
 
     //   --------------------------------

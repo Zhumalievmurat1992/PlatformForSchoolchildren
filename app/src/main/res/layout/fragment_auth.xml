@@ -10,7 +10,6 @@
     tools:context=".presentation.fragments.AuthFragment">
 
     <TextView
-        android:id="@+id/registration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -146,6 +145,25 @@
         android:drawableLeft="@drawable/icon_google"
         tools:ignore="RtlHardcoded" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="@string/do_you_have_an_account"
+        android:textColor="@color/gray_1"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:focusable="true"
+        android:text="@string/register2"
+        android:textColor="@color/dark_blue"
+        android:textSize="16sp" />
+
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
@@ -155,5 +173,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </LinearLayout>

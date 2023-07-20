@@ -7,6 +7,7 @@
     <string name="or_googleGmail">или через Google</string>
     <string name="login_google">Войти через Google</string>
     <string name="register">Регистрация</string>
+    <string name="register2">Зарегистрируйтесь</string>
     <string name="name">Имя</string>
     <string name="your_name">Ваше Имя</string>
     <string name="last_name">Фамилия</string>
@@ -21,6 +22,7 @@
     <string name="conditions_agreement">Нажимая на кнопку, я соглашаюсь на обработку персональных данных</string>
     <string name="have_an_account">У вас уже есть аккаунт?<a href="">Войти</a> </string>
     <string name="haveAnAccount">У вас уже есть аккаунт?</string>
+    <string name="do_you_have_an_account">У вас еще нет аккаунта?</string>
     <string name="account_enter"><u>Войти</u></string>
     <string name="account_enter2">Войти</string>
     <string name="school_number">Номер школы</string>
@@ -31,5 +33,7 @@
     <string name="your_area">Ваш область</string>
     <string name="login">Вход в аккаунт</string>
     <string name="your_password">Ваш пароль</string>
+    <string name="to_send">Отправить</string>
+    <string name="send_to_mail">Введите почту, и мы вышлем ссылку для восстановления доступа</string>
 
 </resources>

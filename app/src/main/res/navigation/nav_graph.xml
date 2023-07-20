@@ -46,4 +46,9 @@
         android:name="com.example.platformforschoolchildren.presentation.fragments.PersonalAccountFragment"
         android:label="fragment_personal_account"
         tools:layout="@layout/fragment_personal_account" />
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.platformforschoolchildren.presentation.fragments.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" />
 </navigation>
