@@ -1,4 +1,4 @@
-package com.example.platformforschoolchildren.core.base
+package com.example.core.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<VB : ViewBinding> : Fragment() {
+abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>: Fragment() {
 
     protected lateinit var binding: VB
-   // protected abstract val viewModel: VM
+    protected abstract val viewModel: VM
 
     protected abstract fun inflateViewBinding(inflater: LayoutInflater): VB
 
@@ -25,12 +25,14 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        checkInternet()
+        initViewModel()
         initView()
         initListener()
     }
-
-    open fun initListener() {}
-
+    open fun checkInternet() {}
+    open fun initViewModel() {}
     open fun initView() {}
+    open fun initListener() {}
 
 }

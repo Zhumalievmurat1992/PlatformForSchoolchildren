@@ -35,5 +35,8 @@
     <string name="your_password">Ваш пароль</string>
     <string name="to_send">Отправить</string>
     <string name="send_to_mail">Введите почту, и мы вышлем ссылку для восстановления доступа</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="name_school">Название школы</string>
+    <string name="name_your_school">Название вашей школы</string>
 
 </resources>

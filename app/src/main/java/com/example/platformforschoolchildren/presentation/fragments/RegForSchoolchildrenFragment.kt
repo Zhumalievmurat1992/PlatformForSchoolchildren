@@ -3,24 +3,39 @@ package com.example.platformforschoolchildren.presentation.fragments
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.platformforschoolchildren.R
-import com.example.platformforschoolchildren.core.base.BaseFragment
+import com.example.core.base.BaseFragment
+import  com.example.platformforschoolchildren.presentation.fragments.viewmodel.RegistrationViewModel
 import com.example.platformforschoolchildren.databinding.FragmentRegForSchoolchildrenBinding
+import com.example.platformforschoolchildren.domain.entity.RegisterEntity
+import dagger.hilt.android.AndroidEntryPoint
 
-class RegForSchoolchildrenFragment : BaseFragment<FragmentRegForSchoolchildrenBinding>() {
+@AndroidEntryPoint
+class RegForSchoolchildrenFragment :
+    BaseFragment<FragmentRegForSchoolchildrenBinding, RegistrationViewModel>() {
+
+    override val viewModel: RegistrationViewModel by lazy {
+        ViewModelProvider(this)[RegistrationViewModel::class.java]
+    }
+
     override fun inflateViewBinding(inflater: LayoutInflater) =
         FragmentRegForSchoolchildrenBinding.inflate(inflater)
-
-    override fun initView() {
-        super.initView()
-    }
 
     override fun initListener() {
         super.initListener()
 
         binding.btnReg.setOnClickListener {
-            findNavController().navigate(R.id.personalAccountFragment) }
+
+            viewModel.regUser2(RegisterEntity(
+                schoolName = binding.nameSchoolEdText.text.toString(),
+                schoolNumber = binding.numSchoolEdText.text.toString(),
+                schoolClass = binding.classEdText.text.toString(),
+                userCityOrRegion = binding.areaEdText.text.toString(),
+            ))
+            findNavController().navigate(R.id.personalAccountFragment)
+        }
 
         binding.accountEnter.setOnClickListener {
             findNavController().navigate(R.id.authFragment)

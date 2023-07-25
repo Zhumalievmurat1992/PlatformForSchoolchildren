@@ -4,12 +4,22 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.LayoutInflater
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.platformforschoolchildren.R
-import com.example.platformforschoolchildren.core.base.BaseFragment
+import com.example.core.base.BaseFragment
+import com.example.platformforschoolchildren.presentation.fragments.viewmodel.RegistrationViewModel
 import com.example.platformforschoolchildren.databinding.FragmentRegistrationBinding
+import com.example.platformforschoolchildren.domain.entity.RegisterEntity
+import dagger.hilt.android.AndroidEntryPoint
 
-class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
+@AndroidEntryPoint
+class RegistrationFragment : BaseFragment<FragmentRegistrationBinding, RegistrationViewModel>() {
+
+
+    override val viewModel: RegistrationViewModel by lazy {
+        ViewModelProvider(this)[RegistrationViewModel::class.java]
+    }
 
     override fun inflateViewBinding(inflater: LayoutInflater) =
         FragmentRegistrationBinding.inflate(inflater)
@@ -20,6 +30,15 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
         emailFocusListener()
 
         binding.btnResume.setOnClickListener {
+            println("--------------------------------------------")
+           viewModel.registerUser(
+               RegisterEntity(
+                   email = binding.emailEdTxt.text.toString(),
+                   password = binding.password.text.toString(),
+                   confirmPassword = binding.confirmPassword.text.toString()
+               )
+           )
+
             findNavController().navigate(R.id.regForSchoolchildrenFragment)
         }
 
@@ -27,9 +46,9 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
             findNavController().navigate(R.id.authFragment)
         }
 
-        binding.name.addTextChangedListener(watcher)
-        binding.lastName.addTextChangedListener(watcher)
-        binding.password.addTextChangedListener(watcher)
+//        binding.name.addTextChangedListener(watcher)
+//        binding.lastName.addTextChangedListener(watcher)
+//        binding.password.addTextChangedListener(watcher)
     }
 
     private val watcher = object : TextWatcher {
@@ -47,6 +66,7 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
         override fun afterTextChanged(p0: Editable?) {}
 
     }
+
     private fun emailFocusListener() {
         binding.emailEdTxt.setOnFocusChangeListener { _, focused ->
             if (!focused) {

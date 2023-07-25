@@ -3,16 +3,23 @@ package com.example.platformforschoolchildren.presentation.fragments
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.Toast
-import com.example.platformforschoolchildren.core.base.BaseFragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.core.base.BaseFragment
 import com.example.platformforschoolchildren.databinding.FragmentForgotPasswordBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.example.platformforschoolchildren.presentation.fragments.viewmodel.AuthViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
-class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>() {
+@AndroidEntryPoint
+class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding,AuthViewModel>() {
 
     private lateinit var mAuth : FirebaseAuth
+
+    override val viewModel: AuthViewModel by lazy {
+        ViewModelProvider(this)[AuthViewModel::class.java]
+    }
 
     override fun inflateViewBinding(inflater: LayoutInflater) =
         FragmentForgotPasswordBinding.inflate(inflater)
@@ -25,6 +32,7 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>() {
            val sPassword = binding.emailEdTxt.text.toString()
             mAuth.sendPasswordResetEmail(sPassword)
                 .addOnSuccessListener {
+
                     Toast.makeText(requireContext(), "Проверьте почту пожалуйста", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener {

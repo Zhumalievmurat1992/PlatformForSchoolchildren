@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.platformforschoolchildren.core.base.BaseFragment
+import com.example.core.base.BaseFragment
 import com.example.platformforschoolchildren.databinding.FragmentAuthBinding
+import com.example.platformforschoolchildren.presentation.fragments.viewmodel.AuthViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.example.platformforschoolchildren.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -20,12 +22,20 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import dagger.hilt.android.AndroidEntryPoint
 
 
-class AuthFragment : BaseFragment<FragmentAuthBinding>() {
+@AndroidEntryPoint
+class AuthFragment : BaseFragment<FragmentAuthBinding, AuthViewModel>() {
 
     private lateinit var mAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
+
+    override val viewModel: AuthViewModel by lazy {
+        ViewModelProvider(this)[AuthViewModel::class.java]
+    }
+
+
     override fun inflateViewBinding(inflater: LayoutInflater) =
         FragmentAuthBinding.inflate(inflater)
 
